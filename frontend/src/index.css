@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f4f6f9;
+  color: #333;
+}
+
+.badge {
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.badge-dev { background: #dc3545; color: white; }
+.badge-lead { background: #28a745; color: white; }
+
+/* Responsividade Básica */
+@media (max-width: 768px) {
+  .sidebar { width: 200px; }
+  .app-main { padding: 1rem; }
+  .catalogo-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+}
+
+@media (max-width: 480px) {
+  .app-body { flex-direction: column; }
+  .sidebar { width: 100%; height: auto; padding-top: 1rem; padding-bottom: 1rem; }
+  .nav-menu { flex-direction: row; flex-wrap: wrap; justify-content: center; }
+  .nav-link { padding: 0.5rem 1rem; }
+}

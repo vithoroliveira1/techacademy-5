@@ -1,0 +1,74 @@
+.catalogo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.carro-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid #e9ecef;
+}
+
+.carro-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.carro-card-header {
+  padding: 1.25rem;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.carro-card-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #343a40;
+}
+
+.carro-ano {
+  background: #007bff;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.carro-card-body {
+  padding: 1.25rem;
+  flex: 1;
+}
+
+.carro-card-body p {
+  margin-bottom: 0.5rem;
+  color: #495057;
+}
+
+.carro-preco {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #28a745 !important;
+  margin-top: 1rem;
+}
+
+.carro-preco small {
+  font-size: 0.9rem;
+  color: #6c757d;
+  font-weight: normal;
+}
+
+.carro-card-footer {
+  padding: 1.25rem;
+  border-top: 1px solid #e9ecef;
+}

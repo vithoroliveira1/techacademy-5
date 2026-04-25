@@ -1,0 +1,31 @@
+/* Layout container */
+.app-container { display: flex; flex-direction: column; min-height: 100vh; background: #f4f6f9; margin: 0; }
+.auth-container { display: flex; align-items: center; justify-content: center; min-height: 100vh; background: #f4f6f9; }
+.auth-card { background: #fff; padding: 2.5rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 100%; max-width: 400px; display: flex; flex-direction: column; }
+.auth-card h2 { margin-top: 0; margin-bottom: 1.5rem; text-align: center; color: #333; }
+.auth-link { margin-top: 1rem; text-align: center; font-size: 0.9rem; }
+.w-full { width: 100%; }
+.mt-2 { margin-top: 0.5rem; }
+.app-body { display: flex; flex: 1; overflow: hidden; }
+.app-main { flex: 1; padding: 2rem; overflow-y: auto; }
+
+/* Header */
+.header {
+  background: #fff; padding: 0 2rem; height: 60px; display: flex;
+  align-items: center; justify-content: space-between; border-bottom: 1px solid #e0e0e0;
+}
+.header-logo { font-size: 1.25rem; font-weight: bold; color: #007bff; }
+.header-user { display: flex; align-items: center; gap: 1rem; font-weight: 500;}
+.logout-btn { background: none; border: none; color: #dc3545; font-weight: 500; cursor: pointer; }
+
+/* Sidebar */
+.sidebar {
+  width: 250px; background: #343a40; color: #fff; padding-top: 2rem; flex-shrink: 0;
+}
+.nav-menu { display: flex; flex-direction: column; }
+.nav-link {
+  padding: 1rem 2rem; color: #c2c7d0; text-decoration: none; font-weight: 500; transition: 0.2s;
+}
+.nav-link:hover, .nav-link.active {
+  background: #494e53; color: #fff; border-left: 4px solid #007bff;
+}
