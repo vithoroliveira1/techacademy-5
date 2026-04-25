@@ -25,7 +25,7 @@ export class CarroController {
   };
   obter = async (req: Request, res: Response) => {
     try {
-      res.status(200).json(await this.service.obter(parseInt(req.params.id)));
+      res.status(200).json(await this.service.obter(parseInt(req.params.id as string)));
     } catch (e) { this.tratar(e, res); }
   };
   criar = async (req: Request, res: Response) => {
@@ -35,14 +35,15 @@ export class CarroController {
   };
   atualizar = async (req: Request, res: Response) => {
     try {
-      await this.service.atualizar(parseInt(req.params.id), req.body);
+      await this.service.atualizar(parseInt(req.params.id as string), req.body);
       res.status(200).json({ message: 'Atualizado' });
     } catch (e) { this.tratar(e, res); }
   };
   deletar = async (req: Request, res: Response) => {
     try {
-      await this.service.deletar(parseInt(req.params.id));
+      await this.service.deletar(parseInt(req.params.id as string));
       res.status(200).json({ message: 'Deletado' });
     } catch (e) { this.tratar(e, res); }
   };
 }
+

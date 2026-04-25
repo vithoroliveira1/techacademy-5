@@ -30,7 +30,7 @@ export class AluguelController {
 
   obter = async (req: Request, res: Response) => {
     try {
-      res.status(200).json(await this.service.obter(parseInt(req.params.id)));
+      res.status(200).json(await this.service.obter(parseInt(req.params.id as string)));
     } catch (e) { this.tratar(e, res); }
   };
 
@@ -43,15 +43,16 @@ export class AluguelController {
 
   finalizar = async (req: Request, res: Response) => {
     try {
-      await this.service.finalizar(parseInt(req.params.id));
+      await this.service.finalizar(parseInt(req.params.id as string));
       res.status(200).json({ message: 'Finalizado' });
     } catch (e) { this.tratar(e, res); }
   };
 
   deletar = async (req: Request, res: Response) => {
     try {
-      await this.service.deletar(parseInt(req.params.id));
+      await this.service.deletar(parseInt(req.params.id as string));
       res.status(200).json({ message: 'Deletado' });
     } catch (e) { this.tratar(e, res); }
   };
 }
+

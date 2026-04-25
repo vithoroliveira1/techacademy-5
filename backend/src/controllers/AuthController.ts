@@ -34,8 +34,9 @@ export class AuthController {
   atualizar = async (req: Request, res: Response) => {
     try {
       const reqId = (req as AuthRequest).usuarioId as number;
-      await this.service.atualizar(parseInt(req.params.id), reqId, req.body);
+      await this.service.atualizar(parseInt(req.params.id as string), reqId, req.body);
       res.status(200).json({ message: 'Atualizado' });
     } catch (e) { this.tratar(e, res); }
   };
 }
+
