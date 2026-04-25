@@ -3,6 +3,7 @@ export type CarroStatus = 'disponivel' | 'alugado';
 export type AluguelStatus = 'ativo' | 'finalizado' | 'cancelado';
 
 export interface Usuario { id: number; nome: string; email: string; cpf: string; role: Role; }
+export interface UsuarioResponse { id: number; nome: string; email: string; cpf: string; role: Role; }
 export interface UsuarioCreate { nome: string; email: string; senha: string; cpf: string; }
 export interface UsuarioUpdate { nome: string; senha?: string; cpf: string; }
 export interface UsuarioLogin { email: string; senha: string; }
