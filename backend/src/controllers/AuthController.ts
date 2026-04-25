@@ -10,6 +10,7 @@ export class AuthController {
     if (msg === 'Credenciais') return res.status(401).json({ error: msg });
     if (msg === 'Proibido') return res.status(403).json({ error: msg });
     if (msg === 'Não encontrado') return res.status(404).json({ error: msg });
+    console.error('=== ERRO NO SERVIDOR ===', err);
     return res.status(500).json({ error: 'Erro interno' });
   }
   registrar = async (req: Request, res: Response) => {
