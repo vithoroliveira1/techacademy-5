@@ -23,8 +23,9 @@ export function Login() {
       // O redirecionamento base agora é feito pelo HomeRedirect via `/`
       navigate('/');
     } catch (err) { 
-      const error = err as { response?: { data?: { error?: string } } };
-      setErro(error.response?.data?.error || 'Erro no login'); 
+      const error = err as { response?: { data?: { error?: string, details?: string } } };
+      const data = error.response?.data;
+      setErro(data?.details ? `${data.error}: ${data.details}` : (data?.error || 'Erro no login')); 
     }
     finally { setLoading(false); }
   }
