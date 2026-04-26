@@ -7,7 +7,8 @@ export class CarroController {
     const msg = err instanceof Error ? err.message : 'Erro interno';
     if (['Campos faltando', 'Vínculo existente', 'Marca inexistente'].includes(msg)) return res.status(400).json({ error: msg });
     if (msg === 'Não encontrado') return res.status(404).json({ error: msg });
-    return res.status(500).json({ error: 'Erro interno' });
+    console.error('ERRO NO SERVIDOR:', err);
+    return res.status(500).json({ error: `Erro interno: ${msg}` });
   }
   listar = async (req: Request, res: Response) => {
     try {
