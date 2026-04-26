@@ -13,8 +13,8 @@ export class CarroRepository {
 
   async findDisponiveis(page: number, limit: number): Promise<ListaPaginada<Carro>> {
     const offset = (page - 1) * limit;
-    const [rows] = await pool.query<RowDataPacket[]>('SELECT c.*, m.nome as marca_nome FROM carros c JOIN marcas m ON c.marca_id = m.id WHERE c.status = "disponivel" LIMIT ? OFFSET ?', [limit, offset]);
-    const [totalRows] = await pool.query<RowDataPacket[]>('SELECT COUNT(*) as count FROM carros WHERE status = "disponivel"');
+    const [rows] = await pool.query<RowDataPacket[]>('SELECT c.*, m.nome as marca_nome FROM carros c JOIN marcas m ON c.marca_id = m.id WHERE c.status = \'disponivel\' LIMIT ? OFFSET ?', [limit, offset]);
+    const [totalRows] = await pool.query<RowDataPacket[]>('SELECT COUNT(*) as count FROM carros WHERE status = \'disponivel\'');
     const total = totalRows[0].count;
     return { data: rows as Carro[], paginacao: { page, limit, total, totalPages: Math.ceil(total / limit) } };
   }
